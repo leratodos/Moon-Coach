@@ -1,0 +1,601 @@
+/*vars*/
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6, li, svg {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.main, .header {
+  background-color: #EFEEE8;
+}
+
+.content_wrapper {
+  padding: 55px 0 40px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+.page_title {
+  margin-bottom: 30px;
+  font-family: "Libre Baskerville";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  color: #333;
+  text-transform: none;
+}
+
+.title_description {
+  margin-bottom: 40px;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 165%;
+  color: rgba(51, 51, 51, 0.9);
+  text-transform: none;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.section_item {
+  background-color: #E4E2D3;
+  padding: 27px;
+  max-width: 392px;
+}
+.section_item .item_description {
+  position: relative;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #333;
+  text-transform: capitalize;
+}
+.section_item .item_description:after {
+  content: "";
+  background-color: #333;
+  width: 38px;
+  height: 1px;
+  position: absolute;
+  right: 0px;
+  bottom: 12px;
+}
+.section_item img {
+  margin-bottom: 20px;
+}
+
+.button {
+  position: relative;
+  background-color: #333;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 111%;
+  color: #EFEEE8;
+  text-transform: none;
+}
+.button .arrow {
+  display: block;
+  background-color: #EFEEE8;
+  width: 28px;
+  height: 2px;
+  position: relative;
+}
+.button .arrow:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #EFEEE8;
+  border-right: 2px solid #EFEEE8;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -1px;
+  top: -5px;
+}
+
+/*Sections*/
+.header {
+  border-bottom: 1px solid #333;
+}
+.header .menu {
+  display: flex;
+  justify-content: center;
+}
+.header .webflow {
+  width: 100%;
+  max-width: 254px;
+  border-left: 1px solid #333;
+  padding: 25px 0 25px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.header .webflow::after {
+  content: "";
+  display: block;
+  background-color: #333;
+  width: 38px;
+  height: 1px;
+}
+.header .nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 25px 20px 25px 0;
+}
+.header .nav_list {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #333;
+  text-transform: capitalize;
+}
+.header .nav_item {
+  display: inline-block;
+  position: relative;
+}
+.header .logo {
+  width: 100%;
+  display: flex;
+  max-height: 34px;
+  padding: 25px 0;
+}
+
+.home {
+  padding: 90px 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .site_name {
+  max-width: 761px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-family: "Libre Baskerville";
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 115%;
+  color: #333;
+  text-transform: none;
+}
+.home .site_name_description {
+  max-width: 884px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 165%;
+  color: #333;
+  text-transform: none;
+}
+.home .button {
+  margin: 0 auto;
+  max-width: 242px;
+}
+
+.screenshots {
+  background-color: #333;
+}
+.screenshots .screenshots_wrapper {
+  display: flex;
+  gap: 30px;
+}
+.screenshots .screenshots_wrapper .screenshot_column_one {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.screenshots .screenshots_wrapper .screenshot_column_two {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.screenshots .screenshots_wrapper .screenshot_column_three {
+  margin-top: 120px;
+}
+
+.facts {
+  padding: 100px 0 140px;
+}
+.facts .facts_block {
+  display: flex;
+  justify-content: space-between;
+}
+.facts .image {
+  max-width: 604px;
+}
+.facts .text {
+  max-width: 604px;
+  padding-left: 100px;
+}
+.facts .text .page_title {
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+.facts .text .title_description {
+  max-width: 494px;
+  margin-bottom: 50px;
+}
+.facts .template_list {
+  margin-bottom: 60px;
+}
+.facts .list_title {
+  margin-bottom: 30px;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 165%;
+  color: #333;
+  text-transform: uppercase;
+}
+.facts .list_item {
+  padding: 18px 0 13px;
+  border-bottom: 1px solid #333;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 165%;
+  color: #333;
+  text-transform: none;
+}
+.facts .button {
+  font-size: 16px;
+  line-height: 125%;
+  max-width: 215px;
+  padding: 15px 25px;
+}
+
+.homepages .title_description {
+  max-width: 634px;
+}
+
+.other_pages .other_pages_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(2, 50%);
+  grid-gap: 30px;
+}
+.other_pages .content_wrapper {
+  border-bottom: 0 solid #000;
+}
+
+.form_questions {
+  padding: 120px 120px 80px;
+}
+.form_questions .form_title {
+  font-family: "Libre Baskerville";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  color: #333;
+  text-transform: none;
+}
+.form_questions .form_block {
+  display: flex;
+  gap: 55px;
+}
+.form_questions .image {
+  width: 50%;
+  max-width: 484px;
+  max-height: 570px;
+  position: relative;
+}
+.form_questions .sticker {
+  width: 90%;
+  left: 5%;
+  position: absolute;
+  background-color: #333;
+  padding: 25px;
+  bottom: 25px;
+}
+.form_questions .sticker .quote {
+  margin-bottom: 15px;
+  font-family: "Libre Baskerville";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 133%;
+  color: rgba(239, 238, 232, 0.9);
+  text-transform: none;
+}
+.form_questions .sticker .signature {
+  font-family: "Reenie Beanie";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 125%;
+  color: #EFEEE8;
+  text-transform: none;
+}
+.form_questions .form {
+  max-width: 440px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form_questions .form .form_title {
+  margin-bottom: 25px;
+}
+.form_questions .form input {
+  display: block;
+  width: 100%;
+  background-color: #EFEEE8;
+  cursor: pointer;
+  border: none;
+  color: #333;
+  padding: 15px 0 15px 35px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #333;
+  font-family: "Libre Baskerville";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 133%;
+  color: #333;
+  text-transform: none;
+}
+.form_questions .form input:focus {
+  outline: none;
+}
+.form_questions input[type=button] {
+  width: 100%;
+  justify-content: center;
+  font-family: "Libre Baskerville";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 133%;
+  color: #EFEEE8;
+  background-color: #333;
+  padding: 20px 25px;
+}
+
+.footer {
+  padding: 90px 0 20px;
+  background-color: #E4E2D3;
+}
+.footer .logo_sm_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.footer .social_media {
+  width: 100%;
+  max-width: 168px;
+  display: flex;
+  gap: 17px;
+}
+.footer .social_media span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 39px;
+  height: 39px;
+  border: 1px solid #000;
+  font-size: 12px;
+  border-radius: 50%;
+  background-color: #E4E2D3;
+  cursor: pointer;
+}
+.footer .social_media span:hover {
+  color: #000;
+  background-color: #EFEEE8;
+  transform: scale(1.2);
+  transition: all 0.2s ease;
+}
+.footer .logo {
+  width: 100%;
+  display: flex;
+  max-height: 34px;
+}
+.footer .description_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 135px;
+}
+.footer .description_wrapper .about {
+  width: 100%;
+  max-width: 400px;
+  font-family: "Libre Baskerville";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 130%;
+  color: #333;
+  text-transform: none;
+}
+.footer .nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.footer .site_list_block .list_title {
+  margin-bottom: 25px;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #333;
+  text-transform: capitalize;
+}
+.footer .site_list_block ul {
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #333;
+  text-transform: capitalize;
+}
+.footer .copyright {
+  font-family: "Libre Baskerville";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #333;
+  text-transform: none;
+}
+.footer .copyright svg {
+  position: relative;
+  top: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .header .nav {
+    display: none;
+  }
+  .header .webflow {
+    max-width: 180px;
+  }
+  .header .webflow::after {
+    display: none;
+  }
+
+  .footer .nav {
+    flex-wrap: wrap;
+    padding: 0 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home .site_name {
+    font-size: 30px;
+  }
+
+  .screenshots .screenshots_wrapper {
+    display: block;
+  }
+
+  .facts .facts_block {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 50px;
+  }
+  .facts .text {
+    padding-left: 0;
+  }
+  .facts .image {
+    max-width: 350px;
+  }
+
+  .gallery {
+    display: block;
+  }
+
+  .section_item {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .other_pages .other_pages_wrapper {
+    display: block;
+  }
+
+  .form_questions {
+    padding: 30px;
+  }
+  .form_questions .form_block {
+    display: block;
+  }
+  .form_questions .image {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .form_questions .form {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .form_questions .form_title {
+    font-size: 30px;
+    text-align: center;
+  }
+  .form_questions .sticker {
+    display: none;
+  }
+
+  .footer .nav {
+    display: none;
+  }
+  .footer .description_wrapper {
+    display: block;
+  }
+  .footer .description_wrapper .about {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 410px) {
+  .header .logo {
+    max-height: 100%;
+    padding: 10px;
+  }
+  .header .webflow {
+    display: none;
+  }
+
+  .footer .logo_sm_wrapper {
+    display: block;
+  }
+  .footer .logo_sm_wrapper .logo {
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+  }
+  .footer .logo_sm_wrapper .social_media {
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+}

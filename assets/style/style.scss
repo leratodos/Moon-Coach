@@ -1,0 +1,615 @@
+@use 'vars';
+@use 'mixin';
+@import 'reset';
+
+.container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.main, .header {
+    background-color: vars.$color-light-bg;
+}
+
+.content_wrapper {
+    padding: 55px 0 40px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+.page_title {
+    margin-bottom: 30px;
+    @include mixin.text-styling ('Libre Baskerville', 700, 40px, 120%, vars.$main-text-color, none)
+}
+
+.title_description {
+    margin-bottom: 40px;
+    @include mixin.text-styling ('Oxygen', 400, 18px, 165%, rgba(51, 51, 51, 0.9), none)
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: nowrap;
+}
+
+.section_item {
+    background-color: vars.$color-dark-bg;
+    padding: 27px;
+    max-width: 392px;
+  
+
+    .item_description {
+        position: relative;
+    
+        &:after {
+            content: '';
+            background-color: vars.$main-text-color;
+            width: 38px;
+            height: 1px;
+            position: absolute;
+            right: 0px;
+            bottom: 12px;
+        }
+
+        @include mixin.text-styling ('Oxygen', 400, 16px, 125%, vars.$main-text-color, capitalize)
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
+}
+
+.button {
+    position: relative;
+    background-color: vars.$main-text-color;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow {
+        display: block;
+        background-color: vars.$color-light-bg;
+        width: 28px;
+        height: 2px;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid vars.$color-light-bg;
+            border-right: 2px solid vars.$color-light-bg;
+            transform: rotate(45deg);
+            position: absolute;
+            right: -1px;
+            top: -5px;
+        }
+    }
+
+    @include mixin.text-styling ('Oxygen', 400, 18px, 111%, vars.$color-light-bg, none )
+}
+
+
+/*Sections*/
+
+.header {
+    border-bottom: 1px solid vars.$main-text-color;
+
+    .menu {
+       
+        display: flex;
+        justify-content: center;
+    }
+
+    .webflow {
+        width: 100%;
+        max-width: 254px;
+        border-left: 1px solid vars.$main-text-color;
+        padding: 25px 0 25px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        
+
+        &::after {
+            content: '';
+            display: block;
+            background-color: vars.$main-text-color;
+            width: 38px;
+            height: 1px;
+        }
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 25px 20px 25px 0;
+    }
+    .nav_list {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        @include mixin.text-styling ('Oxygen', 400, 16px, 125%, vars.$main-text-color, capitalize )
+    }
+
+    .nav_item {
+        display: inline-block;
+        position: relative;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        max-height: 34px;
+        padding: 25px 0;
+
+    }
+}
+
+.home {
+    padding: 90px 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .site_name {
+        max-width: 761px;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        @include mixin.text-styling ('Libre Baskerville', 700, 64px, 115%, vars.$main-text-color, none)
+            
+    }
+
+    .site_name_description {
+        max-width: 884px;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 35px;
+        @include mixin.text-styling ('Oxygen', 400, 22px, 165%, vars.$main-text-color, none)
+    }
+
+    .button {
+        margin: 0 auto;
+        max-width: 242px;
+    }
+
+}
+
+.screenshots {
+    background-color: vars.$main-text-color;
+   
+    .screenshots_wrapper {
+        display: flex;
+        gap: 30px;
+
+        .screenshot_column_one {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .screenshot_column_two {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .screenshot_column_three {
+            margin-top: 120px;
+        }
+    }
+}
+
+.facts {
+    padding: 100px 0 140px;
+
+    .facts_block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .image {
+        max-width: 604px;
+   
+    }
+
+    .text {
+        max-width: 604px;
+        padding-left: 100px;
+
+        .page_title {
+            padding-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .title_description {
+            max-width: 494px;
+            margin-bottom: 50px;
+        }
+    }
+     .template_list {
+        margin-bottom: 60px;
+     }
+
+    .list_title {
+        margin-bottom: 30px;
+        @include mixin.text-styling ('Oxygen', 700, 14px, 165%, vars.$main-text-color, uppercase)
+    }
+
+    .list_item {
+        padding: 18px 0 13px;
+        border-bottom: 1px solid vars.$main-text-color;
+        @include mixin.text-styling ('Oxygen', 400, 16px, 165%, vars.$main-text-color, none)
+    }
+
+    .button {
+        font-size: 16px;
+        line-height: 125%;
+        max-width: 215px;
+        padding: 15px 25px;
+    }
+}
+
+.homepages {
+
+    .title_description {
+        max-width: 634px;
+    }
+
+}
+
+
+.other_pages {
+
+
+    .other_pages_wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        grid-template-rows: repeat(2, 50%);
+        grid-gap: 30px;
+    }
+
+    .content_wrapper {
+        border-bottom: 0 solid #000;
+    }
+}
+
+.form_questions {
+    padding: 120px 120px 80px;
+
+    .form_title {
+        @include mixin.text-styling ('Libre Baskerville', 700, 40px, 120%, vars.$main-text-color, none)
+    }
+
+    .form_block {
+        display: flex;
+        gap: 55px;
+    }
+
+    .image {
+        width: 50%;
+        max-width: 484px;
+        max-height: 570px;
+        position: relative;
+    }
+
+    .sticker    {
+        width: 90%;
+        left: 5%;
+        position: absolute;
+        background-color: vars.$main-text-color;
+        padding: 25px;
+        bottom: 25px;
+        
+
+        .quote {margin-bottom: 15px;
+            @include mixin.text-styling ('Libre Baskerville', 400, 16px, 133%, rgba(239, 238, 232, 0.9), none )
+        }
+
+        .signature {
+            @include mixin.text-styling ('Reenie Beanie', 500, 32px, 125%, vars.$color-light-bg, none)
+        }
+    }
+
+    .form {
+        max-width: 440px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .form_title {
+            margin-bottom: 25px;
+        }
+
+     
+        input {
+            display: block;
+            width: 100%;
+            background-color: vars.$color-light-bg;
+            cursor: pointer;
+            border: none;
+            color: vars.$main-text-color;
+            padding: 15px 0 15px 35px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid vars.$main-text-color;
+
+            &:focus {
+                outline: none;
+            }
+            @include mixin.text-styling ('Libre Baskerville', 500, 16px, 133%, vars.$main-text-color, none)
+        }
+    }
+
+    input[type=button] {
+        width: 100%;    
+        justify-content: center;
+        font-family: 'Libre Baskerville';
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 133%;
+        color: vars.$color-light-bg;
+        background-color: vars.$main-text-color;
+        padding: 20px 25px;
+    }
+    
+
+}
+
+
+.footer {
+    padding: 90px 0 20px;
+    background-color: vars.$color-dark-bg;
+    .logo_sm_wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+
+    .social_media {
+        width: 100%;
+        max-width: 168px;
+        display: flex;
+        gap: 17px;
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 39px;
+            height: 39px;
+            border: 1px solid #000;
+            font-size: 12px;
+            border-radius: 50%;
+            background-color: vars.$color-dark-bg;
+            cursor: pointer;
+           
+
+            &:hover {
+                color: #000;
+                background-color: vars.$color-light-bg;
+                transform: scale(1.2);
+                transition: all .2s ease;
+            }
+        }    
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        max-height: 34px;
+
+    }
+    .description_wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 135px;
+
+        .about {
+            width: 100%;
+            max-width: 400px;
+            @include mixin.text-styling ('Libre Baskerville', 400, 22px, 130%, vars.$main-text-color, none)
+        }
+    }
+    
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+    .site_list_block {
+
+        .list_title {
+            margin-bottom: 25px;
+            @include mixin.text-styling ('Oxygen', 700, 16px, 125%, vars.$main-text-color, capitalize)
+        }
+
+        ul {
+            font-weight: normal;
+            display: flex;
+            flex-direction: column; 
+            gap: 25px;
+            @include mixin.text-styling ('Oxygen', 400, 16px, 125%, vars.$main-text-color, capitalize)
+        }
+    }
+
+    .copyright { 
+        svg {
+            position: relative;
+            top: 5px;
+        }
+        @include mixin.text-styling ('Libre Baskerville', 400, 14px, 143%, vars.$main-text-color, none)
+    }
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .header {
+        .nav {
+            display: none;
+        }
+
+        .webflow {
+            max-width: 180px;
+            &::after {
+                display: none;
+            }
+        }
+    }
+    .footer {
+        .nav {
+            flex-wrap: wrap;
+            padding: 0 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        .site_name {
+            font-size: 30px;
+        }
+    }
+    .screenshots {
+        .screenshots_wrapper {
+            display: block;
+        }
+    }
+
+    .facts {
+        .facts_block {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .text {
+            padding-left: 0;
+        }
+
+        .image {
+            max-width: 350px;
+
+            
+        }
+    }
+
+    .gallery {
+        display: block;
+    }
+
+    .section_item {
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .other_pages {
+        .other_pages_wrapper {
+            display: block;
+    
+        }
+    }
+
+  
+    .form_questions {
+        padding: 30px;
+
+        .form_block {
+            display: block;
+        }
+
+        .image {
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .form {
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+    
+
+        .form_title {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .sticker {
+            display: none;
+        } 
+    }
+
+    .footer {
+        .nav {
+            display: none;
+        }
+
+       
+
+        .description_wrapper {
+            display: block;
+
+            .about {
+                text-align: center;
+                max-width: 100%;
+            }
+
+        }
+     
+    }
+
+  
+
+  
+}
+
+@media screen and (max-width: 410px) {
+
+    .header {
+        .logo {
+            max-height: 100%; 
+            padding: 10px;
+        }
+
+        .webflow {
+            display: none;
+        }
+    }
+
+    .footer {
+        .logo_sm_wrapper {
+            display: block;
+
+            .logo {
+                display: block;
+               
+                margin: 20px auto;
+                width: 50%;
+            }
+
+            .social_media {
+                margin: 0 auto;
+                justify-content: space-around;
+
+            }
+        }
+    }   
+
+  
+}
